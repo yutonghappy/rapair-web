@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body,#app{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+ul,ol,dl{
+    list-style: none;
+}
+
+[class*='scrollbar-'] {
+    --scrollbar-width: 10px; /* 滚动条宽度 */
+    --scrollbar-radius: calc(var(--scrollbar-width) / 2); /* 滚动条圆角 */
+    --scrollbar-bgc: #c1c1c1;
+    --scrollbar-bgc-hover: #a8a8a8;
+    --scrollbar-bgc-active: #787878;
+    --scrollbar-bgc-track: #f1f1f1;
+        /*
+            --scrollbar-bgc                       滚动条背景颜色
+            --scrollbar-bgc-hover                 滚动条hover时的背景颜色
+            --scrollbar-bgc-active                滚动条active时的背景颜色
+            --scrollbar-bgc-track                 滚动条整体的背景颜色
+        */
+}
+/* 隐藏滚动条 */
+:is(.scrollbar-none, [scrollbar-none])::-webkit-scrollbar-thumb,
+:is(.scrollbar-none, [scrollbar-none])::-webkit-scrollbar {
+    /* 使用display: none的方案会导致抖动 */
+    /* display: none !important; */
+    background: rgba(255, 255, 255, 0) none !important;
+    box-shadow: none !important;
+    border: 1px solid transparent !important;
+}
+/* MAC版滚动条 */
+.scrollbar-mac::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-bgc, #bbb);
+    width: var(--scrollbar-width, 8px);
+    border-radius: var(--scrollbar-radius, 4px);
+    box-shadow: 0 0 10px 1px #ccc;
+
+}
+.scrollbar-mac::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-bgc-hover, #aaa) !important;
+    box-shadow: 0 0 10px 3px #ccc !important;
+}
+.scrollbar-mac::-webkit-scrollbar-thumb:active {
+    background-color: var(--scrollbar-bgc-active, #999) !important;
+    /* box-shadow: 0 0 10px 10px #ccc !important; */
+}
+.scrollbar-mac::-webkit-scrollbar {
+    scrollbar-width: var(--scrollbar-width, 8px);
+    -webkit-scrollbar-width: var(--scrollbar-width, 8px);
+    width: var(--scrollbar-width, 8px);
+    scrollbar-color: var(--scrollbar-bgc-track, rgb(235, 235, 235));
+    background-color: var(--scrollbar-bgc-track, rgb(235, 235, 235));
+    border-radius: var(--scrollbar-radius, 4px);
+    /* border: 1px solid #ccc; */
+}
+/* 渐变滚动条 */
+.scrollbar-gradient::-webkit-scrollbar-thumb {
+    background: linear-gradient(#00dbde 0%, #fc00ff 100%);
+    width: var(--scrollbar-width, 8px);
+    border-radius: var(--scrollbar-radius, 4px);
+    box-shadow: 0 0 10px 3px #ccc;
+}
+.scrollbar-gradient::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#00dbde 0%, #fc00ff 100%) !important;
+    width: var(--scrollbar-width, 8px) !important;
+    border-radius: var(--scrollbar-radius, 4px) !important;
+    box-shadow: 0 0 10px 3px #ccc !important;
+}
+.scrollbar-gradient::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(#00dbde 0%, #fc00ff 100%) !important;
+    width: var(--scrollbar-width, 8px) !important;
+    border-radius: var(--scrollbar-radius, 4px) !important;
+    box-shadow: 0 0 10px 3px #ccc !important;
+}
+.scrollbar-gradient::-webkit-scrollbar {
+    scrollbar-width: var(--scrollbar-width, 8px);
+    -webkit-scrollbar-width: var(--scrollbar-width, 8px);
+    width: var(--scrollbar-width, 8px);
+    scrollbar-color: var(--scrollbar-bgc-track, rgb(245, 245, 245));
+    background-color: var(--scrollbar-bgc-track, rgb(245, 245, 245));
+    border-radius: var(--scrollbar-radius, 4px);
+    border: 1px solid #ccc;
+}
